@@ -1,6 +1,7 @@
 @font-face {
     font-family: MapleMono;
-    src: url(font.woff2);
+    font-display: swap;
+    src: url(assets/font.woff2) format("woff2");
 }
 
 body {
