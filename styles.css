@@ -11,7 +11,8 @@ body {
     min-height: 100vh; 
     margin: 0;
     color: #cdd6f4;
-    background-color: #11111b;
+    background-color: #11111b;/
+    /* background: linear-gradient(to bottom, #D5006D 33.33%, #9B59B6 33.33%, #9B59B6 66.67%, #0038A8 66.67%); */ /* maybe later */
     font-family: MapleMono;
 }
 
@@ -31,6 +32,8 @@ body {
 header {
     background: #1e1e2e;
     padding: 20px;
+    margin: 10px;
+    border-radius: 5px;
     text-align: center;
 }
 
@@ -89,3 +92,14 @@ footer {
     max-width: 100%;
     height: auto;
 }
+
+a {
+    color: #f5c2e7;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: #89b4fa;
+}
+
