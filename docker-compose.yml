@@ -1,7 +1,7 @@
 services:
   nginx:
     image: nginx:alpine
-    container_name: ${CONTAINER_NAME:-ploszukiwacz-website}
+    container_name: ploszukiwacz-website
     ports:
       - "${PORT:-8080}:80"
     volumes:
@@ -10,8 +10,8 @@ services:
       - ./data/logs:/var/log/nginx
     restart: unless-stopped
     networks:
-      - ${NETWORK_NAME:-website-network}
+      - website-network
 
 networks:
-  ${NETWORK_NAME:-website-network}:
+  website-network:
     driver: bridge
