@@ -29,6 +29,21 @@ body {
     margin: 0 5px;
 }
 
+nav {
+    margin: 15px 0;
+}
+
+nav a {
+    color: #f5c2e7;
+    text-decoration: none;
+    margin: 0 5px;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #89b4fa;
+}
+
 header {
     background: #1e1e2e;
     padding: 20px;
@@ -101,5 +116,84 @@ a {
 
 a:hover {
     color: #89b4fa;
+}
+
+/* 404 Page Styles */
+.error-container {
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.error-code {
+    font-size: 8rem;
+    font-weight: bold;
+    color: #f38ba8;
+    margin: 0;
+    line-height: 1;
+}
+
+.error-message {
+    font-size: 1.5rem;
+    margin: 20px 0;
+    color: #cdd6f4;
+}
+
+.error-description {
+    font-size: 1rem;
+    margin: 20px 0 40px 0;
+    color: #a6adc8;
+}
+
+.home-button {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #f5c2e7;
+    color: #11111b;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.home-button:hover {
+    background-color: #89b4fa;
+    color: #11111b;
+}
+
+/* Privacy Page Styles */
+.privacy-content {
+    text-align: left;
+    line-height: 1.6;
+}
+
+.privacy-content h2 {
+    color: #f38ba8;
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+
+.privacy-content h3 {
+    color: #89b4fa;
+    margin-top: 25px;
+    margin-bottom: 10px;
+}
+
+.privacy-content p {
+    margin-bottom: 15px;
+}
+
+.privacy-content ul {
+    margin-bottom: 15px;
+    padding-left: 20px;
+}
+
+.privacy-content li {
+    margin-bottom: 8px;
+}
+
+.last-updated {
+    font-style: italic;
+    color: #a6adc8;
+    margin-bottom: 30px;
 }
 
