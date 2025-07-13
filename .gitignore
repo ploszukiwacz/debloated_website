@@ -11,6 +11,9 @@ data/
 .env.production
 .env.staging
 
+# Keep the example file
+!.env.example
+
 # OS generated files
 .DS_Store
 .DS_Store?
