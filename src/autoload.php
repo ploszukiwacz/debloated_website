@@ -16,6 +16,70 @@ You should have received a copy of the GNU Affero General Public License
 along with this program.  If not, see <https://www.gnu.org/licenses/>.
 */
 
+// --- Basic IP and User-Agent pattern blocking ---
+$block_ip_patterns = [
+    '/^185\.177\.72\.144$/',
+];
+
+$block_ua_patterns = [
+    '/nmap/i',
+    '/nikto/i',
+    '/sqlmap/i',
+    '/dirb/i',
+    '/dirbuster/i',
+    '/gobuster/i',
+    '/masscan/i',
+    '/zmap/i',
+    '/nuclei/i',
+    '/wpscan/i',
+    '/whatweb/i',
+    '/httprint/i',
+    '/w3af/i',
+    '/skipfish/i',
+    '/burp/i',
+    '/owasp/i',
+    '/acunetix/i',
+    '/nessus/i',
+    '/openvas/i',
+    '/metasploit/i',
+    '/hydra/i',
+    '/medusa/i',
+    '/john/i',
+    '/hashcat/i',
+    '/aircrack/i',
+    '/reaver/i',
+    '/bettercap/i',
+    '/ettercap/i',
+    '/wireshark/i',
+    '/tcpdump/i',
+    '/shodan/i',
+    '/censys/i',
+    '/zgrab/i',
+];
+
+// Get client IP (try X-Forwarded-For first)
+$client_ip = $_SERVER['HTTP_X_FORWARDED_FOR'] ?? $_SERVER['REMOTE_ADDR'] ?? '';
+$client_ip = explode(',', $client_ip)[0]; // In case of multiple IPs
+
+// Get User-Agent
+$client_ua = $_SERVER['HTTP_USER_AGENT'] ?? '';
+
+// Block if IP matches
+foreach ($block_ip_patterns as $pattern) {
+    if (preg_match($pattern, $client_ip)) {
+        header('HTTP/1.1 403 Forbidden');
+        exit('Access denied.');
+    }
+}
+
+// Block if UA matches
+foreach ($block_ua_patterns as $pattern) {
+    if (preg_match($pattern, $client_ua)) {
+        header('HTTP/1.1 403 Forbidden');
+        exit('Access denied.');
+    }
+}
+
 // Simple autoloader for our classes
 spl_autoload_register(function ($class_name) {
     $file = __DIR__ . '/classes/' . $class_name . '.php';
