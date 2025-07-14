@@ -84,7 +84,7 @@ HTML;
     }
     
     public function renderBodyStart() {
-        return "<body>\n <div id=\"container\">\n";
+        return "<body>\n <div class=\"container\">\n";
     }
     
     public function renderBodyEnd() {

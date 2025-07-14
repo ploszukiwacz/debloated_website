@@ -41,5 +41,11 @@ $errorContent = function() {
 };
 
 // Render the complete page
-echo $page->renderComplete($errorContent());
+$html = $page->renderHead();
+$html .= "<body>\n <div class=\"container\">\n";
+$html .= $page->renderHeader('', true);
+$html .= $errorContent();
+$html .= $page->renderFooter();
+$html .= " </div>\n</body>\n</html>";
+echo $html;
 ?>

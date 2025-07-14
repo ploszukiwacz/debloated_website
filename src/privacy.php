@@ -23,7 +23,7 @@ $page = Page::privacy();
 
 // Create privacy content
 $privacyContent = function() {
-    $html = "  <section id=\"privacy\" class=\"privacy-content\">\n";
+    $html = "  <section class=\"container privacy-content\">\n";
     $html .= "   <h1>Privacy Policy</h1>\n";
     $html .= "   <p class=\"last-updated\">Last updated: July 2025</p>\n\n";
 
