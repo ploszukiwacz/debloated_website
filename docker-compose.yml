@@ -11,6 +11,17 @@ services:
     restart: unless-stopped
     networks:
       - website-network
+    depends_on:
+      - php-fpm
+
+  php-fpm:
+    image: php:8.2-fpm-alpine
+    container_name: ploszukiwacz-php-fpm
+    volumes:
+      - ./src:/usr/share/nginx/html
+    restart: unless-stopped
+    networks:
+      - website-network
 
 networks:
   website-network:
