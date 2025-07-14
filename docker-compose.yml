@@ -3,7 +3,7 @@ services:
     image: nginx:alpine
     container_name: ploszukiwacz-website
     ports:
-      - "${PORT:-8080}:80"
+      - "127.0.0.1:${PORT:-8080}:80"
     volumes:
       - ./src:/usr/share/nginx/html:ro
       - ./nginx.conf:/etc/nginx/nginx.conf:ro
