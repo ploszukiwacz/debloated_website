@@ -59,6 +59,7 @@ $block_ua_patterns = [
     '/GPTBot/i',
     '/ChatGPT/i',
     '/SemrushBot/i',
+    '/Iframely/i',
 ];
 
 // Get client IP (try X-Forwarded-For first)
