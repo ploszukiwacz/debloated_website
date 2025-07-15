@@ -19,6 +19,7 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 // --- Basic IP and User-Agent pattern blocking ---
 $block_ip_patterns = [
     '/^185\.177\.72\.144$/',
+    '/^185\.177\.72\.115$/',
 ];
 
 $block_ua_patterns = [
