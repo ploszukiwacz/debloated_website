@@ -30,6 +30,7 @@ $block_ip_patterns = [
     '/^167\.94\.145\.105$/',
 ];
 
+// 213.55.221.189
 $block_ua_patterns = [
     '/nmap/i',
     '/nikto/i',

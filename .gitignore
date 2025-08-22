@@ -1,7 +1,7 @@
 # Logs
 data/logs/*.log
 data/
-
+misc/
 # Docker
 .docker/
 

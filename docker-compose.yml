@@ -6,7 +6,7 @@ services:
       - "127.0.0.1:${PORT:-8080}:80"
     volumes:
       - ./src:/usr/share/nginx/html:ro
-      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./config:/etc/nginx
       - ./data/logs:/var/log/nginx
     restart: unless-stopped
     networks:
@@ -16,7 +16,7 @@ services:
 
   php-fpm:
     image: php:8.2-fpm-alpine
-    container_name: ploszukiwacz-php-fpm
+    container_name: ploszukiwacz-website-php-fpm
     volumes:
       - ./src:/usr/share/nginx/html
     restart: unless-stopped
